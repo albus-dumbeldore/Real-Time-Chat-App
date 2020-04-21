@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 
 
 io.on('connection',(socket)=>{
-    console.log('New Websocket Connection')
+    // console.log('New Websocket Connection')
      
     // socket.emit('newUser','Welcome')
     // socket.emit('message',generateMessage('Welcome'))
