@@ -185,6 +185,7 @@ button:disabled {
 .room{
     text-decoration: underline;
     font-weight: bold;
+    /* width: 100%; */
 }
 
 .active-user{
