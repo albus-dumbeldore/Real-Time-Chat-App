@@ -20,7 +20,7 @@ const publicDirectoryPath   = path.join(__dirname,'../public')
 app.use(express.static(publicDirectoryPath))
 
  
-let count = 0
+
 
 io.on('connection',(socket)=>{
     console.log('New Websocket Connection')
@@ -51,6 +51,8 @@ io.on('connection',(socket)=>{
 
     socket.on('sendMessage',(message,callback)=>{
         const filter = new Filter()
+        filter.addWords('loda','bosdi','gandu','chut','lodi','bosdike','bhenkaloda','madarchod','bhosdike','terimakichut')
+        filter.clean("some bad word")
         const user = getUser(socket.id)
 
 
