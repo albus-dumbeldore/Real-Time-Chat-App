@@ -36,6 +36,14 @@ io.on('connection',(socket)=>{
         if(error){
             return callback(error)
         }
+        // Filter room bad-words
+        const filter = new Filter()
+        filter.addWords('loda','bosdi','gandu','chut','lodi','bosdike','bhenkaloda','madarchod','bhosdike','terimakichut')
+        filter.clean("some bad word")
+        if(filter.isProfane(user.room)){
+            return callback('Room name me to gali mat likh suar :)')
+        }
+
 
         
         socket.join(user.room)
