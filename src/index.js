@@ -51,7 +51,7 @@ io.on('connection',(socket)=>{
 
     socket.on('sendMessage',(message,callback)=>{
         const filter = new Filter()
-        filter.addWords('loda','bosdi','gandu','chut','lodi','bosdike','bhenkaloda','madarchod','bhosdike','terimakichut')
+        filter.addWords('loda','bosdi','gandu','chut','lodi','bosdike','bhenkaloda','madarchod','bhosdike','terimakichut','bhenkaloda','chutiya','kutta','kuttiya')
         filter.clean("some bad word")
         const user = getUser(socket.id)
 
