@@ -18,6 +18,7 @@ body {
     line-height: 1.4;
     color: #333333;
     font-family: Helvetica, Arial, sans-serif;
+    background: rgb(34, 33, 33);
 }
 
 h1 {
@@ -206,9 +207,24 @@ ul li{
     font-size: large;
 }
 
-/* .border{
-    border:2px solid black
-} */
-/* .messageInput{
-    border : 2px solid #1D1F26;
-} */
+
+
+/* Leaving room button  */
+#leave-room{
+    background:rgb(223, 58, 58);
+    margin-left:15px;
+}
+
+#leave-room:hover{
+    background: rgb(207, 70, 70);
+}
+
+#leave-room:focus,#leave-room:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.messages-color{
+    color:white;
+}
+

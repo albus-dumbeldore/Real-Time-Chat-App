@@ -25,6 +25,13 @@
                         <button>Send</button>
                     </form>
                     <button id="send-location">Send Location</button>
+                    <a href="/index.html"><button id="leave-room">Leave Room</button></a>
+                    <!-- <form action="/index.html">
+                        <button>Leave Room</button>
+
+
+                    </form> -->
+                    <!-- <a href="/index.html">Leave Room</a> -->
                 </div>
             </div>
         
@@ -35,17 +42,17 @@
         
         <script id="message-template" type="text/html">
             <div class="message">
-                <p>
-                    <span class="message__name">{{username}}</span>
+                <p class="messages-color">
+                    <span  class="message__name">{{username}}</span>
                     <span class="message__meta">{{createdAt}}</span>
                 </p>
-                <p>{{msg}}</p>    
+                <p class="messages-color">{{msg}}</p>    
             </div>
         </script>
 
         <script id='link-template' type="text/html">
             <div class="message">
-                <p>
+                <p class="messages-color">
                     <span class="message__name">{{username}}</span>
                     <span class="message__meta">{{createdAt}}</span>
                 </p>

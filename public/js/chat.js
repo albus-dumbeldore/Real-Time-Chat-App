@@ -6,7 +6,7 @@ const $messageFormInput  = $messageForm.querySelector('input')
 const $messageFormButton = $messageForm.querySelector('button') 
 const $sendLocation      = document.querySelector('#send-location')
 const $messages          = document.querySelector('#messages')
-
+const $leaveRoom         = document.querySelector('#leave-room')
 
 // Templates
 const messageTemplate    = document.querySelector('#message-template').innerHTML
@@ -122,6 +122,16 @@ $sendLocation.addEventListener('click',()=>{
     })
 
 })
+
+// For leaving Room pop up 
+$leaveRoom.addEventListener('click',(e)=>{
+    if(confirm("Are You Sure You Want To Leave??")){
+        return true
+    }
+    e.preventDefault()
+    
+})
+
 
 socket.emit('join',{username,room},(error)=>{
     if(error){
