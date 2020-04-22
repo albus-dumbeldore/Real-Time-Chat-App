@@ -3,7 +3,7 @@
     <head>
         <title>Real Time Chat App</title>
         <link rel="icon" href="/img/favicon.png">
-        <link rel="stylesheet" href="/css/styles.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
 
     </head>
     <title>
@@ -17,7 +17,7 @@
                     <label>Username</label>
                     <input type="text" name="username" placeholder="Username" required autocomplete="off">
                     <label>Room</label>
-                    <input type="text" name="room" placeholder="Room" required autocomplete="off">
+                    <input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="room" placeholder="Room" required autocomplete="off">
                     <button>Join</button>
                 </form>
             </div>

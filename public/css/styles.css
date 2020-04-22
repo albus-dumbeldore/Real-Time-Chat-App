@@ -46,6 +46,7 @@ button {
     color: white;
     font-size: 16px;
     transition: background .3s ease;
+    border-radius: 8px;
 }
 
 button:hover {
@@ -228,3 +229,6 @@ ul li{
     color:white;
 }
 
+.messages-color .message__meta{
+    color:rgb(99, 194, 61);
+}
