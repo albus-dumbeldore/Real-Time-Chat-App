@@ -74,9 +74,11 @@ socket.on('LocationEmitServer',(location)=>{
 socket.on('roomData',({room,users})=>{
     // console.log(room)
     // console.log(users)
+    const len  = users.length
     const html = Mustache.render(sidebarTemplate,{
         room,
-        users
+        users,
+        len
     })
     document.querySelector('#sidebar').innerHTML = html
 
