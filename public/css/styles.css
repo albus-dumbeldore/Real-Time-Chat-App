@@ -75,6 +75,7 @@ button:disabled {
     background: #F7F7FA;
     padding: 24px;
     width: 250px;
+    border-radius: 10px;
 }
 
 .centered-form button {
