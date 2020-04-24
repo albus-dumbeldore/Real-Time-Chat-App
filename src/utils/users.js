@@ -9,9 +9,22 @@ const addUser = ({id,username,room,password})=>{
     password = password.trim()
 
     // Validate the data
-    if(!username || !room || !password){
+    if(!username){
+        // return {
+        //     error:'Username and room are required!'
+        // }
         return {
-            error:'Username and room are required!'
+            error:"Username is mandatory!"
+        }
+    }
+    else if(!room){
+        return {
+            error:"Room name is mandatory!"
+        }
+    }
+    else{
+        return {
+            error:"Password is mandatory!"
         }
     }
 
