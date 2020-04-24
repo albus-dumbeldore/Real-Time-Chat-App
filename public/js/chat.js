@@ -115,6 +115,7 @@ $sendLocation.addEventListener('click',()=>{
     }
 
     navigator.geolocation.getCurrentPosition((position)=>{
+        alert("a to ra hu par kuch ho ni ra")
         $sendLocation.removeAttribute('disabled')
         // console.log(position.coords.latitude,position.coords.longitude)
         const pos = {latitude:position.coords.latitude,longitude:position.coords.longitude}
