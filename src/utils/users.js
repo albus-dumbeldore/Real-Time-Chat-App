@@ -22,7 +22,7 @@ const addUser = ({id,username,room,password})=>{
             error:"Room name is mandatory!"
         }
     }
-    else{
+    else if(!password){
         return {
             error:"Password is mandatory!"
         }
