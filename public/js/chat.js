@@ -124,7 +124,7 @@ $sendLocation.addEventListener('click',()=>{
             // console.log('Location Shared')
         })
     },function(error){$sendLocation.removeAttribute('disabled') 
-        alert(error.message)},
+        alert("This app does not support chrome use some other browsers")},
         {enableHighAccuracy:true,timeout:50000})
 
 })
