@@ -115,14 +115,15 @@ $sendLocation.addEventListener('click',()=>{
     }
 
     navigator.geolocation.getCurrentPosition((position)=>{
-        alert("a to ra hu par kuch ho ni ra")
+        // alert("a to ra hu par kuch ho ni ra")
         $sendLocation.removeAttribute('disabled')
         // console.log(position.coords.latitude,position.coords.longitude)
         const pos = {latitude:position.coords.latitude,longitude:position.coords.longitude}
+        // console.log("bhen ka loda " + pos)
         socket.emit('sendLocation',pos,()=>{
             // console.log('Location Shared')
         })
-    })
+    },function(error){alert(error.message)},{enableHighAccuracy:true,timeout:5000})
 
 })
 
