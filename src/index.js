@@ -29,15 +29,15 @@ io.on('connection',(socket)=>{
     // socket.emit('message',generateMessage('Welcome'))
     // socket.broadcast.emit('message',generateMessage('A new user has joined!')) 
     
-    socket.on('join',({username,room,password},callback)=>{
+    socket.on('join',async ({username,room,password},callback)=>{
         
          // Password logic
 
-         const AllUsers = getUsersInRoom(room)
+         const AllUsers =await getUsersInRoom(room)
          // console.log("Ha bosdi ke ye hai password kutte" + password)
          
-         if(AllUsers.length != 0){
-             if(AllUsers[0].password != password){
+         if(await AllUsers.length != 0){
+             if(await AllUsers[0].password != password){
                  return callback("(Bhai / Bhen) password to shi dal de! :)")
              }
          }
