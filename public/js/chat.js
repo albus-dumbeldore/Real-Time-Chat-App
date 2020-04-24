@@ -123,7 +123,9 @@ $sendLocation.addEventListener('click',()=>{
         socket.emit('sendLocation',pos,()=>{
             // console.log('Location Shared')
         })
-    },function(error){alert(error.message)},{enableHighAccuracy:true,timeout:50000})
+    },function(error){$sendLocation.removeAttribute('disabled') 
+        alert(error.message)},
+        {enableHighAccuracy:true,timeout:50000})
 
 })
 
