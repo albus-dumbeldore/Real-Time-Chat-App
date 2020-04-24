@@ -31,16 +31,7 @@ io.on('connection',(socket)=>{
     
     socket.on('join',({username,room,password},callback)=>{
         
-         // Password logic
-
-         const AllUsers = getUsersInRoom(room)
-         // console.log("Ha bosdi ke ye hai password kutte" + password)
          
-         if(AllUsers.length != 0){
-             if(AllUsers[0].password != password){
-                 return callback("(Bhai / Bhen) password to shi dal de! :)")
-             }
-         }
  
         const {error,user} = addUser({id:socket.id,username,room,password})
         if(error){
@@ -52,6 +43,17 @@ io.on('connection',(socket)=>{
         filter.clean("some bad word")
         if(filter.isProfane(user.room)){
             return callback('Room name me to gali mat likh suar :)')
+        }
+
+        // Password logic
+
+        const AllUsers = getUsersInRoom(room)
+        // console.log("Ha bosdi ke ye hai password kutte" + password)
+        
+        if(AllUsers.length != 0){
+            if(AllUsers[0].password != password){
+                return callback("(Bhai / Bhen) password to shi dal de! :)")
+            }
         }
 
         socket.join(user.room)
