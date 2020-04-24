@@ -14,10 +14,15 @@
             <div class="centered-form__box">
                 <h1>Join</h1>
                 <form action="/chat.html">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="Username" maxlength="6" required autocomplete="off">
-                    <label>Room</label>
-                    <input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="room" placeholder="Room" maxlength="4" required autocomplete="off">
+                    <label>Username<span class="star">   *</span></label>
+                    <input type="text" name="username" placeholder="Username" required autocomplete="off">
+
+                    <label>Room Name<span class="star">   *</span></label>
+                    <input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="room" placeholder="Room" required autocomplete="off">
+                    
+                    <label>Room Password<span class="star">   *</span></label>
+                    <input type="password" name="password" placeholder="Password" maxlength="5" required autocomplete="off">
+                    
                     <button>Join</button>
                 </form>
             </div>

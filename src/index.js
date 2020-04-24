@@ -29,8 +29,8 @@ io.on('connection',(socket)=>{
     // socket.emit('message',generateMessage('Welcome'))
     // socket.broadcast.emit('message',generateMessage('A new user has joined!')) 
     
-    socket.on('join',({username,room},callback)=>{
-        const {error,user} = addUser({id:socket.id,username,room})
+    socket.on('join',({username,room,password},callback)=>{
+        const {error,user} = addUser({id:socket.id,username,room,password})
 
 
         if(error){
@@ -42,6 +42,15 @@ io.on('connection',(socket)=>{
         filter.clean("some bad word")
         if(filter.isProfane(user.room)){
             return callback('Room name me to gali mat likh suar :)')
+        }
+
+        // Password logic
+        const AllUsers = getUsersInRoom(user.room)
+        // console.log("Ha bosdi ke ye hai password kutte" + password)
+        if(AllUsers.length != 0){
+            if(AllUsers[0].password != password){
+                return callback("(Bhai / Bhen) password to shi dal de! :)")
+            }
         }
 
 

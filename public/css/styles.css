@@ -234,3 +234,9 @@ ul li{
 .messages-color .message__meta{
     color:rgb(99, 194, 61);
 }
+
+.star{
+    font-size: 15px;
+    color: red;
+}
+

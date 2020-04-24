@@ -2,13 +2,14 @@ const users = []
 
 // adduser , removeUser , getUser , getUsersInRoom
 
-const addUser = ({id,username,room})=>{
+const addUser = ({id,username,room,password})=>{
     // Clean the data remove extra spaces
     username = username.trim().toLowerCase()
     room     = room.trim().toLowerCase()
+    password = password.trim()
 
     // Validate the data
-    if(!username || !room){
+    if(!username || !room || !password){
         return {
             error:'Username and room are required!'
         }
@@ -17,7 +18,7 @@ const addUser = ({id,username,room})=>{
 
     // Check for existing user
     const existingUser    = users.find((user)=>{
-        return user.room === room && user.username === username
+        return user.room === room && user.username === username && user.password === password
 
     })
 
@@ -30,7 +31,7 @@ const addUser = ({id,username,room})=>{
 
 
     // Store User and push in array
-    const user = {id,username,room}
+    const user = {id,username,room,password}
     users.push(user)
     return {user}
 

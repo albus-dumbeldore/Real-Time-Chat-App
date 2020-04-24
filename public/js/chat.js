@@ -18,6 +18,7 @@ const sidebarTemplate    = document.querySelector('#sidebar-template').innerHTML
 // ?name=dhruv&room=loda help to remove starting question mark
 const username =  Qs.parse(location.search,{ignoreQueryPrefix:true}).username
 const room     =  Qs.parse(location.search,{ignoreQueryPrefix:true}).room
+const password =  Qs.parse(location.search,{ignoreQueryPrefix:true}).password
 
 const autoscroll = ()=>{
     //  New message element
@@ -139,7 +140,7 @@ $leaveRoom.addEventListener('click',(e)=>{
 })
 
 
-socket.emit('join',{username,room},(error)=>{
+socket.emit('join',{username,room,password},(error)=>{
     if(error){
         alert(error)
         location.href = '/'
