@@ -29,7 +29,7 @@ const addUser = ({id,username,room,password})=>{
     }
     if(username === room){
         return {
-            error:'Username and RoomName can not be same.Thankyou'
+            error:'Username and RoomName can not be same.Change it..'
         }
     }
 
