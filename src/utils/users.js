@@ -27,6 +27,18 @@ const addUser = ({id,username,room,password})=>{
             error:"Password is mandatory!"
         }
     }
+    if(username === room){
+        return {
+            error:'Username and RoomName can not be same.Thankyou'
+        }
+    }
+
+    if(username === password){
+        return {
+            error:'Password and Username can not be same.Change it..'
+        }
+    }
+
 
 
     // Check for existing user
